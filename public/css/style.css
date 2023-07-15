@@ -350,6 +350,26 @@ a {
   color: var(--c-white);
   display: flex;
   padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 0.25rem;
+}
+.menu a {
+  color: var(--c-white);
+  text-decoration: none;
+  transition: linear 0.3s;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 0.25rem;
+}
+.menu a:hover {
+  background-color: var(--c-secondary);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,4 +3,8 @@
   color: var(--c-white);
   display: flex;
   padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
 }
