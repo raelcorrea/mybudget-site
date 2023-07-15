@@ -345,4 +345,11 @@ a {
   color: var(--c-tertiary);
 }
 
+.hero {
+  background-color: var(--c-tertiary);
+  color: var(--c-white);
+  display: flex;
+  padding: 25px;
+}
+
 /*# sourceMappingURL=style.css.map */
