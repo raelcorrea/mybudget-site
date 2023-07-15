@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./src/config/server.js",
-    "serve": "nodemon ./src/config/server.js",
+    "serve": "concurrently \"npm run sass:w\" \" npm run debug\"",
     "sass:w": "sass -w src/styles/styles.scss public/css/style.css",
     "debug": "SET DEBUG=mybudget-website:* & nodemon ./src/config/server.js"
   },
   "dependencies": {
+    "concurrently": "^8.2.0",
     "cookie-parser": "~1.4.6",
     "debug": "~4.3.4",
     "dotenv": "^16.3.1",
