@@ -1,3 +1,8 @@
+@import '../../node_modules/normalize.css/normalize';
 @import 'utils/color';
 @import 'utils/layout';
 @import 'utils/typography';
+
+@import 'blocks/hero';
+@import 'blocks/menu';
+@import 'blocks/footer';

@@ -1,0 +1,11 @@
+.hero {
+  background-color: var(--c-tertiary);
+  color: var(--c-white);
+  display: flex;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+}
