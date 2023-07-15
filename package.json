@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./src/config/server.js",
     "serve": "nodemon ./src/config/server.js",
+    "sass:w": "sass -w src/styles/styles.scss public/css/style.css",
     "debug": "SET DEBUG=mybudget-website:* & nodemon ./src/config/server.js"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "hbs": "~4.2.0",
     "http-errors": "~2.0.0",
     "morgan": "~1.10.0",
+    "sass": "^1.63.6",
     "sequelize": "^6.32.1",
     "sqlite3": "^5.1.6"
   },
