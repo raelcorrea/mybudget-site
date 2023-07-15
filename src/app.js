@@ -9,12 +9,13 @@ const indexRouter = require('./routes/index')
 const errorHandlerMiddleware = require('./middleware/errorHandlerMiddleware')
 const hbsRegisterHelpersMiddleware = require('./middleware/hbsRegisterHelpersMiddleware')
 
+hbsRegisterHelpersMiddleware(hbs)
+
 const app = express()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
-app.use(hbsRegisterHelpersMiddleware(hbs))
 
 app.use(logger('dev'))
 app.use(express.json())
