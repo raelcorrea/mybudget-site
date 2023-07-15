@@ -1,18 +1,17 @@
+const transactionRouter = require('express').Router()
 const transactionService = require('./transactionService')
 const transactionController = require('./transactionController')
 const transactionRepository = require('./transactionRepository')
 
-module.exports = (router) => {
-  const controller = transactionController(
-    transactionService(transactionRepository)
-  )
+const controller = transactionController(
+  transactionService(transactionRepository)
+)
 
-  router.get('/', controller.indexView)
-  router.get('/create', controller.createView)
-  router.get('/delete/:id', controller.deleteAndRedirect)
-  router.get('/edit/:id', controller.editView)
-  router.post('/create', controller.addAndRedirect)
-  router.post('/edit', controller.updateAndRedirect)
+transactionRouter.get('/', controller.indexView)
+transactionRouter.get('/create', controller.createView)
+transactionRouter.get('/delete/:id', controller.deleteAndRedirect)
+transactionRouter.get('/edit/:id', controller.editView)
+transactionRouter.post('/create', controller.addAndRedirect)
+transactionRouter.post('/edit', controller.updateAndRedirect)
 
-  return router
-}
+module.exports = transactionRouter
