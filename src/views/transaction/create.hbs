@@ -1,0 +1,46 @@
+<h1 class='d-flex justify-content-between align-items-center'>{{title}}
+  <a href='/transaction' class='actionButton cancel'>Voltar</a></h1>
+<hr />
+<form method='post' action='/transaction/create' class='create'>
+  <label>
+    Rótulo:
+    <input
+      type='text'
+      name='label'
+      placeholder='Ex. Refeição no restaurante'
+      required
+    />
+  </label>
+  <label>
+    Valor:
+    <input
+      type='number'
+      step='any'
+      name='value'
+      placeholder='Ex. R$ 9,90 '
+      required
+    />
+  </label>
+  <label>
+    Categorias:
+    <input
+      type='text'
+      name='categories'
+      placeholder='transporte, alimentação, roupas, viagens, etc..'
+    />
+  </label>
+  <label>
+    Data:
+    <input type='date' name='dueDate' />
+  </label>
+  <label>
+    Tipo:
+    <select name='type' required>
+      <option>- Selecione -</option>
+      <option value='Receita'>Receita</option>
+      <option value='Despesa'>Despesa</option>
+    </select>
+  </label>
+  <button type='submit' class='actionButton new'>Finalizar Cadastro</button>
+</form>
+<script src='/javascripts/transaction.js'></script>
