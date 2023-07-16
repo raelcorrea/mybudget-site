@@ -1,0 +1,54 @@
+.transactions {
+  background-color: var(--c-white);
+  padding: 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  .search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    input[type='search'] {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      background-color: var(--c-silver);
+      color: #fff;
+      border-radius: 4px;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    button {
+      display: flex;
+      padding: 0.8rem;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+      background-color: var(--c-tertiary);
+      color: #fff;
+      border-radius: 4px;
+    }
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--c-primary);
+      padding: 1rem;
+      border-bottom: 1px solid var(--c-primary-dark);
+      p {
+        margin: 0;
+        width: 25%;
+      }
+      .label {
+      }
+    }
+  }
+}

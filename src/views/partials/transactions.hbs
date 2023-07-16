@@ -1,0 +1,19 @@
+<section class='transactions'>
+  <form class='search'>
+    <input type='search' name='q' placeholder='Busque uma transação' />
+    <button type='submit'>
+      <i class='material-symbols-outlined'>search</i>
+      Buscar
+    </button>
+  </form>
+  <ul class='list'>
+    {{#each datasource}}
+      <li class='item'>
+        <p class='label'>{{this.label}}</p>
+        <p class='price'>{{toCurrencyBrl this.value}}</p>
+        <p class='type'>{{this.type}}</p>
+        <p class='createdASt'>{{toDate this.createdAt}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</section>

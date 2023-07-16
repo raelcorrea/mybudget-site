@@ -311,7 +311,11 @@ template {
   --c-white: #fff;
   --c-black: #000;
   --c-yellow: #ffcc00;
+  --c-green: #015f43;
+  --c-red: #f75a68;
+  --c-silver: silver;
   --c-primary: #f6f7eb;
+  --c-primary-dark: #e8e9dd;
   --c-secondary: #393e41;
   --c-tertiary: #e94f37;
   --c-secondary-light: rgba(57, 62, 65, 0.5);
@@ -335,9 +339,9 @@ template {
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  font-family: sans-serif;
-  padding: 50px;
+  padding: 2rem;
   color: var(--c-secondary);
   background-color: var(--c-primary);
 }
@@ -384,34 +388,54 @@ a {
 }
 
 .balance {
-  background-color: var(--c-secondary);
-  color: var(--c-white);
-  padding: 1rem;
-  border-radius: 4px;
-}
-.balance header {
-  color: var(--c-yellow);
-  text-align: center;
-  border-bottom: 1px solid #888;
-  padding: 0 0 0.5rem;
-}
-.balance header strong {
-  font-weight: 500;
-  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .balance .values {
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 .balance .values li {
-  color: var(--c-primary);
-  font-size: 0.875rem;
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  position: relative;
+  border-radius: 4px;
 }
-.balance .values li strong.accent {
-  color: var(--c-yellow);
+.balance .values li h6 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+.balance .values li p {
+  font-size: 3rem;
+  margin: 0;
+  color: var(--c-tertiary);
+}
+.balance .values li i {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+}
+.balance .values li.incomes i {
+  color: var(--c-green);
+}
+.balance .values li.expenses i {
+  color: var(--c-red);
+}
+.balance .values li.total {
+  background-color: var(--c-green);
+  color: var(--c-white);
+}
+.balance .values li.total p {
+  color: var(--c-white);
 }
 
 .listaTransacoes {
@@ -491,6 +515,58 @@ a {
   border-radius: 0.25rem;
   color: #fff;
   font-weight: bold;
+}
+
+.transactions {
+  background-color: var(--c-white);
+  padding: 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.transactions .search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.transactions .search input[type=search] {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: var(--c-silver);
+  color: #fff;
+  border-radius: 4px;
+}
+.transactions .search input[type=search]::placeholder {
+  color: #fff;
+}
+.transactions .search button {
+  display: flex;
+  padding: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: var(--c-tertiary);
+  color: #fff;
+  border-radius: 4px;
+}
+.transactions .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.transactions .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--c-primary);
+  padding: 1rem;
+  border-bottom: 1px solid var(--c-primary-dark);
+}
+.transactions .list .item p {
+  margin: 0;
+  width: 25%;
 }
 
 /*# sourceMappingURL=style.css.map */

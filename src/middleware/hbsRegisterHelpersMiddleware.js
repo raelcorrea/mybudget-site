@@ -17,6 +17,9 @@ module.exports = (hbs) => {
     return new Date(date).toDateString()
   })
 
+  hbs.registerHelper('toDate', (date) => {
+    return new Date(date).toLocaleDateString()
+  })
   hbs.registerHelper('toCurrencyBrl', (value) => {
     return currency(value).BRL()
   })
