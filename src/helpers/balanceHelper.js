@@ -6,7 +6,6 @@ module.exports = async (transactionService) => {
   let expenses = 0
 
   transactions.forEach((t) => {
-    console.log(t.label, t.type)
     if (t.type == 'Receita') {
       incomes = incomes + t.value
     }

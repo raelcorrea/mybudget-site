@@ -2,7 +2,6 @@ const transactionModel = require('./transactionModel')
 
 module.exports = (() => {
   const addTransaction = async (transactionDto) => {
-    console.log('Add Transaction Values', transactionDto)
     return await transactionModel.create(transactionDto)
   }
 
