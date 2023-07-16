@@ -1,30 +1,42 @@
-<h1 class='d-flex justify-content-between align-items-center'>{{title}}
-  <a href='/transaction/create' class='actionButton new'>Adicionar</a></h1>
+<aside class="aside">
+    {{> balance incomes=balance.incomes expenses=balance.expenses total=balance.total  }}
+</aside>
+<section class="view">
+  <header>
+    <h1 class='d-flex justify-content-between align-items-center'>Minhas Transações</h1>
+    <a href='/transaction/create' class='actionButton new'>Adicionar</a>
+  </header>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Valor</th>
-    <th>Tipo</th>
-    <th>Ações</th>
-  </tr>
+<ul class="listaTransacoes">
   {{#each model}}
-    <tr>
-      <td class='text-left'>{{this.label}}</td>
-      <td class='text-right'> R$ {{this.value}}</td>
-      <td class='text-center'>{{this.type}}</td>
-      <td class='text-center'>
-        <a
+  <li class="itemTransacao">
+    <div class="left">
+      <header>
+        <strong class="title">{{this.label}}</strong>
+      </header>
+      <p><span class="badge">{{this.type}}</span> <span class="date">- {{toDateString this.updatedAt}}</span></p>
+    </div>
+    <div class="right">
+      <strong class="price">{{toCurrencyBrl this.value}}</strong>
+      <div class="actionButtons">
+      <a
           href='/transaction/edit/{{this.id}}'
           title='Editar Transação'
         >Editar</a>
-        |
         <a
           href='/transaction/delete/{{this.id}}'
           title='Excluir Transação'
           onclick="return confirm('Deseja mesmo excluir esta transação')"
         >Excluir</a>
-      </td>
-    </tr>
+
+      </div>
+    </div>
+  </li>
   {{/each}}
-</table>
+</ul>
+
+
+
+</section>
+
+
