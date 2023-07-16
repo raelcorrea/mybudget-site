@@ -1,0 +1,31 @@
+.form {
+  background-color: var(--c-white);
+  padding: 1rem;
+  border-radius: 4px;
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: none;
+    max-width: 50%;
+    margin: auto;
+  }
+  label {
+    display: flex;
+    justify-content: space-between;
+  }
+  input,
+  select {
+    padding: 0.5rem;
+    width: 75%;
+  }
+  button {
+    padding: 1rem;
+    border: none;
+    background-color: var(--c-secondary);
+    border-radius: 0.25rem;
+    color: #fff;
+    font-weight: bold;
+  }
+}

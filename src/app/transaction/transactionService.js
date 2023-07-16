@@ -3,7 +3,6 @@ module.exports = (transactionRepository) => {
     try {
       return await transactionRepository.addTransaction(transactionDto)
     } catch (error) {
-      console.log(error)
       throw new Error(error)
     }
   }

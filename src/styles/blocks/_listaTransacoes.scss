@@ -1,0 +1,41 @@
+.listaTransacoes {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .itemTransacao {
+    background-color: var(--c-white);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 3px var(--c-black);
+    display: flex;
+    justify-content: space-between;
+    header {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .price {
+      font-size: 2rem;
+      text-align: right;
+    }
+
+    .actionButtons {
+      text-align: right;
+    }
+
+    .title {
+      font-size: 1rem;
+    }
+
+    .date {
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

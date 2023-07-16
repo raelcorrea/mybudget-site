@@ -1,3 +1,4 @@
+const balanceHelper = require('../../helpers/balanceHelper')
 const transactionDto = require('./transactionDto')
 
 module.exports = (transactionService) => {
@@ -13,6 +14,7 @@ module.exports = (transactionService) => {
       res.render('transaction/index', {
         title: 'Minhas Transações - My Budget',
         model: allTransactions,
+        balance: await balanceHelper(transactionService),
       })
     } catch (error) {
       next(error)
