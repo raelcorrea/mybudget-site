@@ -1,0 +1,60 @@
+<form id='registerTransactionForm' class='form'>
+  <fieldset>
+    <div class='field'>
+      <label>Descrição</label>
+      <input type='text' name='label' placeholder='Descrição' />
+    </div>
+    <div class='field'>
+      <label>Valor</label>
+      <input type='text' name='value' placeholder='Preço' />
+    </div>
+    <div class='field'>
+      <label>Categoria</label>
+      <select name='categories'>
+        <option>- Selecione -</option>
+        <option>Alimentação</option>
+        <option>Conforto</option>
+        <option>Educação</option>
+        <option>Lazer</option>
+        <option>Moradia</option>
+        <option>Outros</option>
+        <option>Saúde</option>
+        <option>Transporte</option>
+        <option>Vestuario</option>
+        <option>Viagem</option>
+        <option>Presente</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>Tipo</label>
+      <div class='radioList'>
+        <div class='radioItem'>
+          <label class='radioLabel income'><input
+              type='radio'
+              name='type'
+              value='Receita'
+            />
+            <i class='material-symbols-outlined'>
+              arrow_circle_up
+            </i>
+            Entrada</label>
+        </div>
+        <div class='radioItem'>
+          <label class='radioLabel expense'><input
+              type='radio'
+              name='type'
+              value='Despesa'
+            />
+            <i class='material-symbols-outlined'>
+              expand_circle_down
+            </i>
+            Saída</label>
+        </div>
+      </div>
+    </div>
+    <div class='field'>
+      <button type='submit'>Cadastrar</button>
+    </div>
+
+  </fieldset>
+</form>
