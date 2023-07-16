@@ -1,11 +1,7 @@
-<aside class="aside">
-    {{> balance incomes=balance.incomes expenses=balance.expenses total=balance.total  }}
-</aside>
 <section class="view">
-{{> pageTitle }}
-{{> transactions datasource=model}}
-
-
+    {{> balance datasource=balancePartial }}
+    {{> pageTitle }}
+    {{> transactions datasource=transactions}}
 </section>
 
 
