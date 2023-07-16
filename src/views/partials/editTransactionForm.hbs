@@ -1,0 +1,92 @@
+<form
+  method='post'
+  action='/transaction/edit'
+  id='registerTransactionForm'
+  class='form'
+>
+  <fieldset>
+    <input type="hidden" name="id" value="{{datasource.id}}">
+    <div class='field'>
+      <label>Descrição</label>
+      <input
+        type='text'
+        name='label'
+        placeholder='Descrição / {{datasource.label}}'
+        value='{{datasource.label}}'
+        required
+      />
+    </div>
+    <div class='field'>
+      <label>Valor</label>
+      <input
+        type='number'
+        step='any'
+        name='value'
+        placeholder='Preço'
+        value='{{datasource.value}}'
+        required
+      />
+    </div>
+    <div class='field'>
+      <label>Categoria</label>
+      <select name='categories' required>
+        <option value=''>- Selecione -</option>
+        <option {{#if (isEqual 'Alimentação' datasource.categories) }}selected{{/if}}>Alimentação</option>
+        <option {{#if (isEqual 'Conforto' datasource.categories) }}selected{{/if}}>Conforto</option>
+        <option {{#if (isEqual 'Educação' datasource.categories) }}selected{{/if}}>Educação</option>
+        <option {{#if (isEqual 'Lazer' datasource.categories) }}selected{{/if}}>Lazer</option>
+        <option {{#if (isEqual 'Moradia' datasource.categories) }}selected{{/if}}>Moradia</option>
+        <option {{#if (isEqual 'Outros' datasource.categories) }}selected{{/if}}>Outros</option>
+        <option {{#if (isEqual 'Saúde' datasource.categories) }}selected{{/if}}>Saúde</option>
+        <option {{#if (isEqual 'Transporte' datasource.categories) }}selected{{/if}}>Transporte</option>
+        <option {{#if (isEqual 'Vestuario' datasource.categories) }}selected{{/if}}>Vestuario</option>
+        <option {{#if (isEqual 'Viagem' datasource.categories) }}selected{{/if}}>Viagem</option>
+        <option {{#if (isEqual 'Presente' datasource.categories) }}selected{{/if}}>Presente</option>
+      </select>
+    </div>
+    <div class='field'>
+      <label>Data</label>
+      <input
+        type='date'
+        name='dueDate'
+        value='{{ datasource.dueDate}}'
+        required
+      />
+    </div>
+    <div class='field'>
+      <label>Tipo</label>
+      <div class='radioList'>
+        <div class='radioItem'>
+          <label class='radioLabel income {{#if (isEqual 'Receita' datasource.type) }}checked{{/if}}'><input
+              type='radio'
+              name='type'
+              value='Receita'
+              {{#if (isEqual 'Receita' datasource.type) }}checked{{/if}}
+              required
+            />
+            <i class='material-symbols-outlined'>
+              arrow_circle_up
+            </i>
+            Entrada</label>
+        </div>
+        <div class='radioItem'>
+          <label class='radioLabel expense {{#if (isEqual 'Despesa' datasource.type) }}checked{{/if}}'><input
+              type='radio'
+              name='type'
+              value='Despesa'
+              {{#if (isEqual 'Despesa' datasource.type) }}checked{{/if}}
+            />
+            <i class='material-symbols-outlined'>
+              expand_circle_down
+            </i>
+            Saída</label>
+        </div>
+      </div>
+    </div>
+    <div class='field twoButtons'>
+      <a href="/transaction/delete/{{datasource.id}}" type='button' onclick="return confirm('Deseja excluir esta transação?')">Excluir</a>
+      <button type='submit'>Editar</button>
+    </div>
+
+  </fieldset>
+</form>

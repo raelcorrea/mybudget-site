@@ -33,6 +33,21 @@
     }
   }
 
+  .twoButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    button {
+      width: 25%;
+    }
+
+    a {
+      display: block;
+      padding: 1rem;
+    }
+  }
+
   .radioList {
     display: flex;
     justify-content: space-between;

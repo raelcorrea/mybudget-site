@@ -5,6 +5,11 @@
     {{#> modal title="Nova Transação" id="modalRegisterTransaction"}}
       {{> registerTransactionForm}}
     {{/modal}}
+
+    {{#> modal title="Editar Transação" id="modalEditTransaction" model=model}}
+      {{> editTransactionForm datasource=model}}
+    {{/modal}}
 </section>
+
 
 

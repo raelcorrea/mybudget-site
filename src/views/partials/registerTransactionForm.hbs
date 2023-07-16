@@ -1,17 +1,28 @@
-<form id='registerTransactionForm' class='form'>
+<form
+  method='post'
+  action='/transaction/create'
+  id='registerTransactionForm'
+  class='form'
+>
   <fieldset>
     <div class='field'>
       <label>Descrição</label>
-      <input type='text' name='label' placeholder='Descrição' />
+      <input type='text' name='label' placeholder='Descrição' required />
     </div>
     <div class='field'>
       <label>Valor</label>
-      <input type='text' name='value' placeholder='Preço' />
+      <input
+        type='number'
+        step='any'
+        name='value'
+        placeholder='Preço'
+        required
+      />
     </div>
     <div class='field'>
       <label>Categoria</label>
-      <select name='categories'>
-        <option>- Selecione -</option>
+      <select name='categories' required>
+        <option value=''>- Selecione -</option>
         <option>Alimentação</option>
         <option>Conforto</option>
         <option>Educação</option>
@@ -26,6 +37,10 @@
       </select>
     </div>
     <div class='field'>
+      <label>Data</label>
+      <input type='date' name='dueDate' required />
+    </div>
+    <div class='field'>
       <label>Tipo</label>
       <div class='radioList'>
         <div class='radioItem'>
@@ -33,6 +48,7 @@
               type='radio'
               name='type'
               value='Receita'
+              required
             />
             <i class='material-symbols-outlined'>
               arrow_circle_up
