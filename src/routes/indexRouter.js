@@ -14,7 +14,7 @@ indexRouter.get('/', async function (req, res, next) {
   }
 
   res.render('home', {
-    title: 'Express',
+    title: 'My Budget',
     transactions: allTransactions,
     balancePartial: await balancePartial(_transactionService),
   })
