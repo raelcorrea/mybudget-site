@@ -9,8 +9,10 @@ const hbs = require('hbs')
 const errorHandlerMiddleware = require('./middleware/errorHandlerMiddleware')
 const hbsRegisterHelpersMiddleware = require('./middleware/hbsRegisterHelpersMiddleware')
 const routerMiddleWare = require('./middleware/routerMiddleWare')
+const hbsRegisterPartialsMiddleware = require('./middleware/hbsRegisterPartialsMiddleware')
 
 hbsRegisterHelpersMiddleware(hbs)
+hbsRegisterPartialsMiddleware(hbs)
 
 const app = express()
 // view engine setup

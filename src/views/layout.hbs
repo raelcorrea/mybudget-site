@@ -10,14 +10,12 @@
     <main class='page'>
       <header class='hero'>
         <h1>My Budget</h1>
-        <nav class='menu'>
-          <a href='/'>Home</a>
-          <a href='/transaction'>Transações</a>
-          <a href='/projection'>Pojeções</a>
-        </nav>
+        {{> navbar}}
 
       </header>
       <section class='content'>
+      {{> balance incomes=balance.incomes expenses=balance.expenses total=balance.total  }}
+
         {{{body}}}
       </section>
       <footer class='footer'>

@@ -1,0 +1,30 @@
+.balance {
+  background-color: var(--c-secondary);
+  color: var(--c-white);
+  padding: 1rem;
+  border-radius: 4px;
+  header {
+    color: var(--c-yellow);
+    text-align: center;
+    border-bottom: 1px solid #888;
+    padding: 0 0 0.5rem;
+    strong {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+  .values {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    li {
+      color: var(--c-primary);
+      font-size: 0.875rem;
+      strong.accent {
+        color: var(--c-yellow);
+      }
+    }
+  }
+}

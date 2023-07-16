@@ -1,0 +1,13 @@
+{{#if (isNotEmpty total)}}
+
+  <div class='balance'>
+    <header class='title'>
+      <strong>Balanço </strong>
+    </header>
+    <ul class='values'>
+      <li class='incomes'><strong>Receitas</strong>{{incomes}}</li>
+      <li class='expenses'><strong>Despesas:</strong> {{expenses}}</li>
+      <li class='total'><strong class='accent'>Saldo:</strong> {{total}}</li>
+    </ul>
+  </div>
+{{/if}}
