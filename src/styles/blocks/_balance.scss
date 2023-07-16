@@ -1,29 +1,57 @@
 .balance {
-  background-color: var(--c-secondary);
-  color: var(--c-white);
-  padding: 1rem;
-  border-radius: 4px;
-  header {
-    color: var(--c-yellow);
-    text-align: center;
-    border-bottom: 1px solid #888;
-    padding: 0 0 0.5rem;
-    strong {
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
   .values {
-    margin: 1rem 0 0;
-    padding: 0;
-    list-style: none;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
     li {
-      color: var(--c-primary);
-      font-size: 0.875rem;
-      strong.accent {
-        color: var(--c-yellow);
+      flex: 1;
+      background: #fff;
+      padding: 2rem;
+      position: relative;
+      border-radius: 4px;
+      h6 {
+        font-size: 1rem;
+        margin: 0 0 1rem;
+      }
+
+      p {
+        font-size: 3rem;
+        margin: 0;
+        color: var(--c-tertiary);
+      }
+
+      i {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 2rem;
+      }
+
+      &.incomes {
+        i {
+          color: var(--c-green);
+        }
+      }
+
+      &.expenses {
+        i {
+          color: var(--c-red);
+        }
+      }
+      &.total {
+        background-color: var(--c-green);
+        color: var(--c-white);
+        p {
+          color: var(--c-white);
+        }
       }
     }
   }
