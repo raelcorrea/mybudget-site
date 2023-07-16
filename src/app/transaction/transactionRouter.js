@@ -7,10 +7,7 @@ const controller = transactionController(
   transactionService(transactionRepository)
 )
 
-transactionRouter.get('/', controller.indexView)
-transactionRouter.get('/create', controller.createView)
 transactionRouter.get('/delete/:id', controller.deleteAndRedirect)
-transactionRouter.get('/edit/:id', controller.editView)
 transactionRouter.post('/create', controller.addAndRedirect)
 transactionRouter.post('/edit', controller.updateAndRedirect)
 

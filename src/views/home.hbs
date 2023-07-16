@@ -1,5 +1,13 @@
-<section class='homePage'>
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
-
+<section class="view">
+    {{> balance datasource=balancePartial }}
+    {{> pageTitle }}
+    {{> transactions datasource=transactions}}
+    {{#> modal title="Nova Transação" id="modalRegisterTransaction"}}
+      {{> registerTransactionForm}}
+    {{/modal}}
+    {{#> modal title="Editar Transação" id="modalEditTransaction"}}
+      {{> registerTransactionForm}}
+    {{/modal}}
 </section>
+
+

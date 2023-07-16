@@ -1,31 +1,11 @@
-const currency = require('../utils/currency')
+const hbsIsEqualRegisterHelper = require('../helpers/hbsIsEqualRegisterHelper')
+const hbsIsNotEmptyRegisterHelper = require('../helpers/hbsIsNotEmptyRegisterHelper')
+const hbsToCurrencyBrlRegisterHelper = require('../helpers/hbsToCurrencyBrlRegisterHelper')
+const hbsToDateRegisterHelper = require('../helpers/hbsToDateRegisterHelper')
 
 module.exports = (hbs) => {
-  hbs.registerHelper('isEqual', function (expectedValue, value) {
-    return value === expectedValue
-  })
-
-  hbs.registerHelper('isEmpty', function (value) {
-    return value === undefined || value === ''
-  })
-
-  hbs.registerHelper('isNotEmpty', function (value) {
-    return value !== undefined && value !== ''
-  })
-
-  hbs.registerHelper('toDateString', (date) => {
-    return new Date(date).toDateString()
-  })
-
-  hbs.registerHelper('toCurrencyBrl', (value) => {
-    return currency(value).BRL()
-  })
-
-  hbs.registerHelper('toArray', (value) => {
-    if (value != undefined && value != '') {
-      return value.split(value)
-    }
-
-    return []
-  })
+  hbs.registerHelper('isEqual', hbsIsEqualRegisterHelper)
+  hbs.registerHelper('isNotEmpty', hbsIsNotEmptyRegisterHelper)
+  hbs.registerHelper('toDate', hbsToDateRegisterHelper)
+  hbs.registerHelper('toCurrencyBrl', hbsToCurrencyBrlRegisterHelper)
 }

@@ -8,24 +8,81 @@
     flex-direction: column;
     gap: 1rem;
     border: none;
-    max-width: 50%;
     margin: auto;
   }
   label {
-    display: flex;
-    justify-content: space-between;
+    display: none;
   }
   input,
   select {
     padding: 0.5rem;
-    width: 75%;
+    width: 100%;
   }
   button {
-    padding: 1rem;
+    padding: 1rem 1rem;
+    width: 100%;
     border: none;
     background-color: var(--c-secondary);
     border-radius: 0.25rem;
     color: #fff;
-    font-weight: bold;
+    font-weight: 500;
+    cursor: pointer;
+    transition: linear 0.3s;
+    &:hover {
+      background-color: var(--c-tertiary);
+    }
+  }
+
+  .radioList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    .radioLabel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      background-color: var(--c-primary);
+      color: var(--c-secondary);
+      padding: 1rem;
+      position: relative;
+      cursor: pointer;
+      border-radius: 0.25rem;
+      &.income {
+        i {
+          color: var(--c-green);
+        }
+
+        &.checked {
+          background-color: var(--c-green);
+          color: #fff;
+          i {
+            color: #fff;
+          }
+        }
+      }
+      &.expense {
+        i {
+          color: var(--c-red);
+        }
+        &.checked {
+          background-color: var(--c-red);
+          color: #fff;
+          i {
+            color: #fff;
+          }
+        }
+      }
+
+      input {
+        width: auto;
+        opacity: 0;
+        position: absolute;
+      }
+    }
+    .radioItem {
+      width: 100%;
+    }
   }
 }

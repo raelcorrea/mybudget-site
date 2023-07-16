@@ -1,13 +1,22 @@
-{{#if (isNotEmpty total)}}
+{{#if (isNotEmpty datasource.total)}}
 
   <div class='balance'>
-    <header class='title'>
-      <strong>Balanço </strong>
-    </header>
     <ul class='values'>
-      <li class='incomes'><strong>Receitas</strong>{{incomes}}</li>
-      <li class='expenses'><strong>Despesas:</strong> {{expenses}}</li>
-      <li class='total'><strong class='accent'>Saldo:</strong> {{total}}</li>
+      <li class='incomes'>
+        <h6><strong>Receitas</strong></h6>
+        <p>{{datasource.incomes}}</p>
+        <i class='material-symbols-outlined'>arrow_drop_up</i>
+      </li>
+      <li class='expenses'>
+        <h6><strong>Despesas</strong></h6>
+        <p>{{datasource.expenses}}</p>
+        <i class='material-symbols-outlined'>arrow_drop_down</i>
+      </li>
+      <li class='total'>
+        <h6><strong class='accent'>Saldo</strong></h6>
+        <p>{{datasource.total}}</p>
+        <i class='material-symbols-outlined'>attach_money</i>
+      </li>
     </ul>
   </div>
 {{/if}}
