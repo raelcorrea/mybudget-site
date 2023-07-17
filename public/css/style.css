@@ -429,8 +429,16 @@ a {
   right: 2rem;
   font-size: 2rem;
 }
+.balance .values li.incomes p,
+.balance .values li.incomes h6 {
+  color: var(--c-green);
+}
 .balance .values li.incomes i {
   color: var(--c-green);
+}
+.balance .values li.expenses p,
+.balance .values li.expenses h6 {
+  color: var(--c-red);
 }
 .balance .values li.expenses i {
   color: var(--c-red);

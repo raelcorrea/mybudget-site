@@ -36,12 +36,21 @@
       }
 
       &.incomes {
+        p,
+        h6 {
+          color: var(--c-green);
+        }
         i {
           color: var(--c-green);
         }
       }
 
       &.expenses {
+        p,
+        h6 {
+          color: var(--c-red);
+        }
+
         i {
           color: var(--c-red);
         }
