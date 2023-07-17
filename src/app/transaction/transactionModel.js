@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize')
 const database = require('../../config/database')
 
+// Transaction Model
 module.exports = database.define('transaction', {
   label: {
     type: DataTypes.STRING,

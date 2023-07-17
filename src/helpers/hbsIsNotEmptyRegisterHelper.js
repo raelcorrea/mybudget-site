@@ -1,3 +1,5 @@
-module.exports = function (value) {
+const hbsIsNotEmptyRegisterHelper = (value) => {
   return value !== undefined && value !== ''
 }
+
+module.exports = hbsIsNotEmptyRegisterHelper

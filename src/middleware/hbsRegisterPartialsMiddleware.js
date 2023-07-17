@@ -1,5 +1,7 @@
 const path = require('path')
 
-module.exports = (hbs) => {
+const hbsRegisterPartialsMiddleware = (hbs) => {
   hbs.registerPartials(path.join(__dirname, '../views/partials'))
 }
+
+module.exports = hbsRegisterPartialsMiddleware

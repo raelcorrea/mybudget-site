@@ -1,4 +1,4 @@
-module.exports = (value) => {
+const currencyHelper = (value) => {
   const BRL = () => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -16,3 +16,5 @@ module.exports = (value) => {
     USD,
   }
 }
+
+module.exports = currencyHelper

@@ -1,6 +1,6 @@
 const currencyHelper = require('../helpers/currencyHelper')
 
-module.exports = async (transactionService) => {
+const balancePartial = async (transactionService) => {
   const transactions = await transactionService.getTransactions()
   let incomes = 0
   let expenses = 0
@@ -22,3 +22,5 @@ module.exports = async (transactionService) => {
     total: currencyHelper(total).BRL(),
   }
 }
+
+module.exports = balancePartial
