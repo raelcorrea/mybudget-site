@@ -7,7 +7,7 @@ const database = new Sequelize({
 
 database
   .sync()
-  .then((res) => console.log('Você está conectado com o banco de dados: ', res))
+  .then((res) => console.log('Você está conectado com o banco de dados'))
   .catch((err) =>
     console.log('Não foi possivel conectar no banco de dados: ', err)
   )

@@ -23,13 +23,15 @@ const addTransactionActionButton = () => {
     modalRegisterTransaction.toggle()
   })
 
-  const closeButton = modalRegisterTransaction.block.querySelectorAll(
-    '.body > .title > button'
-  )[0]
-  if (closeModal) {
-    closeButton.addEventListener('click', () => {
-      modalRegisterTransaction.toggle()
-    })
+  if (modalRegisterTransaction) {
+    const closeButton = modalRegisterTransaction.block.querySelectorAll(
+      '.body > .title > button'
+    )[0]
+    if (closeModal) {
+      closeButton.addEventListener('click', () => {
+        modalRegisterTransaction.toggle()
+      })
+    }
   }
 }
 
@@ -53,3 +55,18 @@ const transactionTypeChecked = () => {
 }
 
 transactionTypeChecked()
+
+const editTransactionActionButton = () => {
+  const modalEditTransaction = modal('modalEditTransaction')
+  modalEditTransaction.toggle()
+
+  if (modalEditTransaction) {
+    const closeButton = modalEditTransaction.block.querySelectorAll(
+      '.body > .title > button'
+    )[0]
+    closeButton.addEventListener('click', () => {
+      modalEditTransaction.toggle()
+    })
+  }
+}
+editTransactionActionButton()

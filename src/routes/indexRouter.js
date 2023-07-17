@@ -2,22 +2,14 @@ const transactionService = require('../app/transaction/transactionService')
 const transactionRepository = require('../app/transaction/transactionRepository')
 const balancePartial = require('../partials/balancePartial')
 const transactionDto = require('../app/transaction/transactionDto')
+const transactionController = require('../app/transaction/transactionController')
 
 const indexRouter = require('express').Router()
-indexRouter.get('/', async function (req, res, next) {
-  const allTransactions = []
-  const _transactionService = transactionService(transactionRepository)
-  const transactions = await _transactionService.getTransactions()
-
-  for (let itemTransaction of transactions) {
-    allTransactions.push(transactionDto(itemTransaction))
-  }
-
-  res.render('home', {
-    title: 'Express',
-    transactions: allTransactions,
-    balancePartial: await balancePartial(_transactionService),
-  })
-})
+const controller = transactionController(
+  transactionService(transactionRepository)
+)
+indexRouter.get('/:q', controller.homeView)
+indexRouter.get('/', controller.homeView)
+indexRouter.get('/edit/:id', controller.editView)
 
 module.exports = indexRouter

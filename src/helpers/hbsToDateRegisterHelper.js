@@ -1,3 +1,4 @@
 module.exports = (date) => {
-  return new Date(date).toLocaleDateString()
+  const _date = new Date(date)
+  return `${_date.getDay()}/${currentMonth}/${_date.getFullYear()}`
 }
