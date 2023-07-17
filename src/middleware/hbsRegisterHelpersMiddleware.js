@@ -4,6 +4,7 @@ const hbsToCurrencyBrlRegisterHelper = require('../helpers/hbsToCurrencyBrlRegis
 const hbsToDateSysRegisterHelper = require('../helpers/hbsToDateSysRegisterHelper')
 const hbsToDateRegisterHelper = require('../helpers/hbsToDateRegisterHelper')
 const hbsIsLowerThenZero = require('../helpers/hbsIsLowerThenZero')
+const hbsToPositiveNumberRegisterHelper = require('../helpers/hbsToPositiveNumberRegisterHelper')
 
 module.exports = (hbs) => {
   hbs.registerHelper('isEqual', hbsIsEqualRegisterHelper)
@@ -12,4 +13,5 @@ module.exports = (hbs) => {
   hbs.registerHelper('toDateSys', hbsToDateSysRegisterHelper)
   hbs.registerHelper('toCurrencyBrl', hbsToCurrencyBrlRegisterHelper)
   hbs.registerHelper('isLowerThenZero', hbsIsLowerThenZero)
+  hbs.registerHelper('toPositiveNumber', hbsToPositiveNumberRegisterHelper)
 }
