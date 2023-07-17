@@ -8,6 +8,7 @@ const indexRouter = require('express').Router()
 const controller = transactionController(
   transactionService(transactionRepository)
 )
+indexRouter.get('/:q', controller.homeView)
 indexRouter.get('/', controller.homeView)
 indexRouter.get('/edit/:id', controller.editView)
 

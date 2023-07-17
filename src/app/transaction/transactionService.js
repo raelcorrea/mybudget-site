@@ -39,11 +39,16 @@ module.exports = (transactionRepository) => {
     }
   }
 
+  const searchTransactionByLabel = async (label) => {
+    return await transactionRepository.findAllTransactionLabelLike(label)
+  }
+
   return {
     addTransaction,
     editTransaction,
     getTransactions,
     getTransactionById,
     deleteTransaction,
+    searchTransactionByLabel,
   }
 }

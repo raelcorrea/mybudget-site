@@ -1,3 +1,4 @@
+const { Op } = require('sequelize')
 const transactionModel = require('./transactionModel')
 
 module.exports = (() => {
@@ -23,11 +24,22 @@ module.exports = (() => {
     return await transactionModel.findOne({ where: { id } })
   }
 
+  const findAllTransactionLabelLike = async (label) => {
+    return await transactionModel.findAll({
+      where: {
+        label: {
+          [Op.like]: `%${label}%`,
+        },
+      },
+    })
+  }
+
   return {
     addTransaction,
     editTransaction,
     deleteTransaction,
     findAllTransaction,
     findTransactionById,
+    findAllTransactionLabelLike,
   }
 })()

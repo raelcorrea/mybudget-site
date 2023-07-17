@@ -43,7 +43,14 @@ module.exports = (transactionService) => {
   }
 
   const homeView = async (req, res, next) => {
-    const _allTransactions = await allTransactions()
+    console.log(req.params, req.query.q)
+    let _allTransactions = await allTransactions()
+    const { q } = req.query
+    if (q) {
+      const searchResult = await transactionService.searchTransactionByLabel(q)
+
+      _allTransactions = searchResult
+    }
     res.render('home', {
       title: 'My Budget',
       transactions: _allTransactions.reverse(),
