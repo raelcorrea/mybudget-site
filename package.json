@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently \"node ./src/config/serverConfig.js\" \"npm run sass:b\"",
+    "start": "concurrently \"node ./src/config/server.js\" \"npm run sass:b\"",
     "serve": "concurrently \"npm run sass:w\" \" npm run debug\"",
     "sass:w": "sass -w src/styles/styles.scss public/css/style.css",
     "sass:b": "sass src/styles/styles.scss public/css/style.css",
-    "debug": "SET DEBUG=mybudget-website:* & nodemon ./src/config/serverConfig.js"
+    "debug": "SET DEBUG=mybudget-website:* & nodemon ./src/config/server.js"
   },
   "dependencies": {
     "@types/express": "^4.17.17",

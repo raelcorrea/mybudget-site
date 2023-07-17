@@ -362,6 +362,10 @@ a {
   border-radius: 0.5rem;
   margin-bottom: 2rem;
 }
+.hero h1 a {
+  color: #fff;
+  text-decoration: none;
+}
 
 .menu {
   display: flex;
@@ -630,8 +634,27 @@ a {
 }
 .transactions .list .item p {
   margin: 0;
-  width: 25%;
 }
+.transactions .list .item p a {
+  text-decoration: none;
+  font-weight: 500;
+}
+.transactions .list .item p.label {
+  width: 40%;
+}
+.transactions .list .item p.price {
+  width: 25%;
+  text-align: right;
+}
+.transactions .list .item p.type {
+  width: 25%;
+  text-align: center;
+}
+.transactions .list .item p.dueDate {
+  width: 10%;
+  text-align: right;
+}
+
 .actionButton {
   border: none;
   padding: 0.5rem 1rem;

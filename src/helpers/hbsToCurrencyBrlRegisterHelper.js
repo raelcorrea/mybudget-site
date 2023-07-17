@@ -1,5 +1,5 @@
-const currency = require('../utils/currency')
+const currencyHelper = require('../helpers/currencyHelper')
 
 module.exports = (value) => {
-    return currency(value).BRL()
-  }
+  return currencyHelper(value).BRL()
+}

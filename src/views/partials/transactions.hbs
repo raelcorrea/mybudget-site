@@ -12,7 +12,7 @@
         <p class='label'><a href='/edit/{{this.id}}'>{{this.label}}</a></p>
         <p class='price'>{{toCurrencyBrl this.value}}</p>
         <p class='type'>{{this.type}}</p>
-        <p class='createdASt'>{{toDateSys this.dueDate}}</p>
+        <p class='dueDate'>{{toDate this.dueDate}}</p>
       </li>
     {{/each}}
   </ul>
