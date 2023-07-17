@@ -1,12 +1,18 @@
 const modal = (id) => {
   const block = document.getElementById(id)
 
-  const toggle = () => {
-    block.classList.toggle('open')
+  if (block) {
+    const toggle = () => {
+      if (block) {
+        block.classList.toggle('open')
+      }
+    }
+
+    return {
+      block,
+      toggle,
+    }
   }
 
-  return {
-    block,
-    toggle,
-  }
+  return undefined
 }

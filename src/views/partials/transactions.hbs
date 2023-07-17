@@ -10,7 +10,8 @@
     {{#each datasource}}
       <li class='item'>
         <p class='label'><a href='/edit/{{this.id}}'>{{this.label}}</a></p>
-        <p class='price'>{{toCurrencyBrl this.value}}</p>
+        <p class='price {{#if (isLowerThenZero this.value) }} negativo {{/if}}'>{{toCurrencyBrl this.value}}</p>
+        <p class='categories'>{{this.categories}}</p>
         <p class='type'>{{this.type}}</p>
         <p class='dueDate'>{{toDate this.dueDate}}</p>
       </li>

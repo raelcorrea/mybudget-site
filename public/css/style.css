@@ -384,12 +384,15 @@ a {
 }
 
 .footer {
-  border-top: 1px solid var(--c-secondary-light);
-  margin-top: 4rem;
-  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  background-color: var(--c-secondary);
+  border-radius: 4px;
+  padding: 1.5rem;
 }
 .footer p {
   font-size: 12px;
+  margin: 0;
+  color: var(--c-white);
 }
 
 .balance {
@@ -415,8 +418,11 @@ a {
   border-radius: 4px;
 }
 .balance .values li h6 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0 0 1rem;
+}
+.balance .values li h6 strong {
+  font-weight: 500;
 }
 .balance .values li p {
   font-size: 3rem;
@@ -429,14 +435,24 @@ a {
   right: 2rem;
   font-size: 2rem;
 }
+.balance .values li.incomes {
+  background-color: var(--c-white);
+}
+.balance .values li.incomes p,
+.balance .values li.incomes h6,
 .balance .values li.incomes i {
   color: var(--c-green);
 }
+.balance .values li.expenses {
+  background-color: var(--c-white);
+}
+.balance .values li.expenses p,
+.balance .values li.expenses h6,
 .balance .values li.expenses i {
   color: var(--c-red);
 }
 .balance .values li.total {
-  background-color: var(--c-green);
+  background-color: var(--c-secondary);
   color: var(--c-white);
 }
 .balance .values li.total p {
@@ -640,14 +656,22 @@ a {
   font-weight: 500;
 }
 .transactions .list .item p.label {
-  width: 40%;
+  width: 35%;
 }
 .transactions .list .item p.price {
-  width: 25%;
+  width: 20%;
   text-align: right;
+  color: var(--c-green);
+}
+.transactions .list .item p.price.negativo {
+  color: var(--c-red);
+}
+.transactions .list .item p.categories {
+  width: 20%;
+  text-align: center;
 }
 .transactions .list .item p.type {
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 .transactions .list .item p.dueDate {

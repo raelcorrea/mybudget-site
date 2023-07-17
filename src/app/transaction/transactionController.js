@@ -5,6 +5,11 @@ module.exports = (transactionService) => {
   const addAndRedirect = async (req, res, next) => {
     try {
       const dto = transactionDto(req.body)
+
+      if (dto.type == 'Despesa') {
+        dto.value = dto.value * -1
+      }
+
       await transactionService.addTransaction(dto)
 
       res.redirect('/?source=create&submited=true')
