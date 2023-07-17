@@ -45,9 +45,25 @@
       border-bottom: 1px solid var(--c-primary-dark);
       p {
         margin: 0;
-        width: 25%;
-      }
-      .label {
+        a {
+          text-decoration: none;
+          font-weight: 500;
+        }
+        &.label {
+          width: 40%;
+        }
+        &.price {
+          width: 25%;
+          text-align: right;
+        }
+        &.type {
+          width: 25%;
+          text-align: center;
+        }
+        &.dueDate {
+          width: 10%;
+          text-align: right;
+        }
       }
     }
   }

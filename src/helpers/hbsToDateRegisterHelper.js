@@ -1,4 +1,7 @@
 module.exports = (date) => {
-  const _date = new Date(date)
-  return `${_date.getDay()}/${currentMonth}/${_date.getFullYear()}`
+  const newDateArr = date ? date.split('-') : []
+  if (newDateArr.length >= 0) {
+    return `${newDateArr[2]}/${newDateArr[1]}/${newDateArr[0]}`
+  }
+  return date
 }

@@ -1,4 +1,4 @@
-const currency = require('../utils/currency')
+const currencyHelper = require('../helpers/currencyHelper')
 
 module.exports = async (transactionService) => {
   const transactions = await transactionService.getTransactions()
@@ -17,8 +17,8 @@ module.exports = async (transactionService) => {
   const total = incomes - expenses
 
   return {
-    incomes: currency(incomes).BRL(),
-    expenses: currency(expenses).BRL(),
-    total: currency(total).BRL(),
+    incomes: currencyHelper(incomes).BRL(),
+    expenses: currencyHelper(expenses).BRL(),
+    total: currencyHelper(total).BRL(),
   }
 }
