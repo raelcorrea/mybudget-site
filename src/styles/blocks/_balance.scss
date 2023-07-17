@@ -18,8 +18,11 @@
       position: relative;
       border-radius: 4px;
       h6 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin: 0 0 1rem;
+        strong {
+          font-weight: 500;
+        }
       }
 
       p {
@@ -36,27 +39,24 @@
       }
 
       &.incomes {
+        background-color: var(--c-white);
         p,
-        h6 {
-          color: var(--c-green);
-        }
+        h6,
         i {
           color: var(--c-green);
         }
       }
 
       &.expenses {
+        background-color: var(--c-white);
         p,
-        h6 {
-          color: var(--c-red);
-        }
-
+        h6,
         i {
           color: var(--c-red);
         }
       }
       &.total {
-        background-color: var(--c-green);
+        background-color: var(--c-secondary);
         color: var(--c-white);
         p {
           color: var(--c-white);

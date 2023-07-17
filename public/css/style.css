@@ -418,8 +418,11 @@ a {
   border-radius: 4px;
 }
 .balance .values li h6 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0 0 1rem;
+}
+.balance .values li h6 strong {
+  font-weight: 500;
 }
 .balance .values li p {
   font-size: 3rem;
@@ -432,22 +435,24 @@ a {
   right: 2rem;
   font-size: 2rem;
 }
-.balance .values li.incomes p,
-.balance .values li.incomes h6 {
-  color: var(--c-green);
+.balance .values li.incomes {
+  background-color: var(--c-white);
 }
+.balance .values li.incomes p,
+.balance .values li.incomes h6,
 .balance .values li.incomes i {
   color: var(--c-green);
 }
-.balance .values li.expenses p,
-.balance .values li.expenses h6 {
-  color: var(--c-red);
+.balance .values li.expenses {
+  background-color: var(--c-white);
 }
+.balance .values li.expenses p,
+.balance .values li.expenses h6,
 .balance .values li.expenses i {
   color: var(--c-red);
 }
 .balance .values li.total {
-  background-color: var(--c-green);
+  background-color: var(--c-secondary);
   color: var(--c-white);
 }
 .balance .values li.total p {
