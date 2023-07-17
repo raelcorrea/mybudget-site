@@ -50,14 +50,23 @@
           font-weight: 500;
         }
         &.label {
-          width: 40%;
+          width: 35%;
         }
         &.price {
-          width: 25%;
+          width: 20%;
           text-align: right;
+          color: var(--c-green);
+          &.negativo {
+            color: var(--c-red);
+          }
         }
+        &.categories {
+          width: 20%;
+          text-align: center;
+        }
+
         &.type {
-          width: 25%;
+          width: 20%;
           text-align: center;
         }
         &.dueDate {

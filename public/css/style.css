@@ -640,14 +640,22 @@ a {
   font-weight: 500;
 }
 .transactions .list .item p.label {
-  width: 40%;
+  width: 35%;
 }
 .transactions .list .item p.price {
-  width: 25%;
+  width: 20%;
   text-align: right;
+  color: var(--c-green);
+}
+.transactions .list .item p.price.negativo {
+  color: var(--c-red);
+}
+.transactions .list .item p.categories {
+  width: 20%;
+  text-align: center;
 }
 .transactions .list .item p.type {
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 .transactions .list .item p.dueDate {

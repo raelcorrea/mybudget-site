@@ -14,7 +14,7 @@ module.exports = async (transactionService) => {
     }
   })
 
-  const total = incomes - expenses
+  const total = incomes + expenses
 
   return {
     incomes: currencyHelper(incomes).BRL(),
