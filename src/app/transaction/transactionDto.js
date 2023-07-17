@@ -1,14 +1,21 @@
-module.exports = (props) => {
-  const { id, createdAt, updatedAt, label, value, type, categories, dueDate } =
-    props
-  return {
-    id,
-    createdAt,
-    updatedAt,
-    label,
-    value,
-    type,
-    categories,
-    dueDate,
-  }
-}
+const transactionDto = ({
+  id,
+  createdAt,
+  updatedAt,
+  label,
+  value,
+  type,
+  categories,
+  dueDate,
+}) => ({
+  id,
+  createdAt,
+  updatedAt,
+  label,
+  value,
+  type,
+  categories,
+  dueDate,
+})
+
+module.exports = transactionDto

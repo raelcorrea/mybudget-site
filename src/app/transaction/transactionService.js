@@ -1,4 +1,4 @@
-module.exports = (transactionRepository) => {
+const transactionService = (transactionRepository) => {
   const addTransaction = async (transactionDto) => {
     try {
       return await transactionRepository.addTransaction(transactionDto)
@@ -52,3 +52,5 @@ module.exports = (transactionRepository) => {
     searchTransactionByLabel,
   }
 }
+
+module.exports = transactionService

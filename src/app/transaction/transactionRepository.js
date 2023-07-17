@@ -1,7 +1,5 @@
-const { Op } = require('sequelize')
-const transactionModel = require('./transactionModel')
-
-module.exports = (() => {
+// Transaction Repository
+const transactionRepository = (transactionModel) => {
   const addTransaction = async (transactionDto) => {
     return await transactionModel.create(transactionDto)
   }
@@ -23,7 +21,6 @@ module.exports = (() => {
   const findTransactionById = async (id) => {
     return await transactionModel.findOne({ where: { id } })
   }
-
   const findAllTransactionLabelLike = async (label) => {
     return await transactionModel.findAll({
       where: {
@@ -33,7 +30,6 @@ module.exports = (() => {
       },
     })
   }
-
   return {
     addTransaction,
     editTransaction,
@@ -42,4 +38,6 @@ module.exports = (() => {
     findTransactionById,
     findAllTransactionLabelLike,
   }
-})()
+}
+
+module.exports = transactionRepository

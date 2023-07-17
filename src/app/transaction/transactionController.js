@@ -1,14 +1,31 @@
 const balancePartial = require('../../partials/balancePartial')
 const transactionDto = require('./transactionDto')
 
-module.exports = (transactionService) => {
+const transactionTransformerDto = (reqBody) => {
+  const { id, label, value, type, categories, dueDate, createdAt, updatedAt } =
+    transactionDto(reqBody)
+
+  let transformedValue = value
+  if (type === 'Despesa') {
+    transformedValue = value * -1
+  }
+
+  return {
+    id,
+    label,
+    value: transformedValue,
+    type,
+    categories,
+    dueDate,
+    createdAt,
+    updatedAt,
+  }
+}
+
+const transactionController = (transactionService) => {
   const addAndRedirect = async (req, res, next) => {
     try {
-      const dto = transactionDto(req.body)
-
-      if (dto.type == 'Despesa') {
-        dto.value = dto.value * -1
-      }
+      const dto = transactionTransformerDto(req.body)
 
       await transactionService.addTransaction(dto)
 
@@ -29,7 +46,9 @@ module.exports = (transactionService) => {
 
   const updateAndRedirect = async (req, res, next) => {
     try {
-      await transactionService.editTransaction(transactionDto(req.body))
+      const dto = transactionTransformerDto(req.body)
+
+      await transactionService.editTransaction(dto)
       res.redirect('/?source=edit&submited=true')
     } catch (error) {
       next(error)
@@ -52,7 +71,7 @@ module.exports = (transactionService) => {
     let _allTransactions = await allTransactions()
     const { q } = req.query
     if (q) {
-      const searchResult = await transactionService.searchTransactionByLabel(q)
+      const searchResult = await transactionService.findAllTransaction()
 
       _allTransactions = searchResult
     }
@@ -87,3 +106,5 @@ module.exports = (transactionService) => {
     editView,
   }
 }
+
+module.exports = transactionController
