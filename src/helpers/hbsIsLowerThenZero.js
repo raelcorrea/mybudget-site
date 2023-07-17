@@ -1,2 +1,3 @@
-module.exports = (number)=> number < 0
+const hbsIsLowerThenZero = (number) => number < 0
 
+module.exports = hbsIsLowerThenZero

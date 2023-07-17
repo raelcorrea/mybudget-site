@@ -1,5 +1,6 @@
 const currencyHelper = require('../helpers/currencyHelper')
-
-module.exports = (value) => {
+const hbsToCurrencyBrlRegisterHelper = (value) => {
   return currencyHelper(value).BRL()
 }
+
+module.exports = hbsToCurrencyBrlRegisterHelper
