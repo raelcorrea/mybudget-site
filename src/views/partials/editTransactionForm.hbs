@@ -31,17 +31,25 @@
       <label>Categoria</label>
       <select name='categories' required>
         <option value=''>- Categoria -</option>
-        <option {{#if (isEqual 'Alimentação' datasource.categories) }}selected{{/if}}>Alimentação</option>
-        <option {{#if (isEqual 'Conforto' datasource.categories) }}selected{{/if}}>Conforto</option>
-        <option {{#if (isEqual 'Educação' datasource.categories) }}selected{{/if}}>Educação</option>
-        <option {{#if (isEqual 'Lazer' datasource.categories) }}selected{{/if}}>Lazer</option>
-        <option {{#if (isEqual 'Moradia' datasource.categories) }}selected{{/if}}>Moradia</option>
-        <option {{#if (isEqual 'Outros' datasource.categories) }}selected{{/if}}>Outros</option>
-        <option {{#if (isEqual 'Saúde' datasource.categories) }}selected{{/if}}>Saúde</option>
-        <option {{#if (isEqual 'Transporte' datasource.categories) }}selected{{/if}}>Transporte</option>
-        <option {{#if (isEqual 'Vestuario' datasource.categories) }}selected{{/if}}>Vestuario</option>
-        <option {{#if (isEqual 'Viagem' datasource.categories) }}selected{{/if}}>Viagem</option>
-        <option {{#if (isEqual 'Presente' datasource.categories) }}selected{{/if}}>Presente</option>
+        <optgroup label="Receitas">
+          <option {{#if (isEqual 'Salário' datasource.categories) }}selected{{/if}}>Salário</option>
+          <option {{#if (isEqual 'Venda' datasource.categories) }}selected{{/if}}>Venda</option>
+          <option {{#if (isEqual 'Freelancer' datasource.categories) }}selected{{/if}}>Freelancer</option>
+          <option {{#if (isEqual 'Investimento' datasource.categories) }}selected{{/if}}>Investimento</option>
+        </optgroup>
+        <optgroup label="Despesas">
+          <option {{#if (isEqual 'Alimentação' datasource.categories) }}selected{{/if}}>Alimentação</option>
+          <option {{#if (isEqual 'Conforto' datasource.categories) }}selected{{/if}}>Conforto</option>
+          <option {{#if (isEqual 'Educação' datasource.categories) }}selected{{/if}}>Educação</option>
+          <option {{#if (isEqual 'Lazer' datasource.categories) }}selected{{/if}}>Lazer</option>
+          <option {{#if (isEqual 'Moradia' datasource.categories) }}selected{{/if}}>Moradia</option>
+          <option {{#if (isEqual 'Saúde' datasource.categories) }}selected{{/if}}>Saúde</option>
+          <option {{#if (isEqual 'Transporte' datasource.categories) }}selected{{/if}}>Transporte</option>
+          <option {{#if (isEqual 'Vestuario' datasource.categories) }}selected{{/if}}>Vestuario</option>
+          <option {{#if (isEqual 'Viagem' datasource.categories) }}selected{{/if}}>Viagem</option>
+          <option {{#if (isEqual 'Presente' datasource.categories) }}selected{{/if}}>Presente</option>
+          <option {{#if (isEqual 'Outros' datasource.categories) }}selected{{/if}}>Outros</option>
+        </optgroup>
       </select>
     </div>
     <div class='field'>
