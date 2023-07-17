@@ -71,7 +71,7 @@ const transactionController = (transactionService) => {
     let _allTransactions = await allTransactions()
     const { q } = req.query
     if (q) {
-      const searchResult = await transactionService.findAllTransaction()
+      const searchResult = await transactionService.searchTransactionByLabel(q)
 
       _allTransactions = searchResult
     }

@@ -1,3 +1,5 @@
+const { Op } = require('sequelize')
+
 // Transaction Repository
 const transactionRepository = (transactionModel) => {
   const addTransaction = async (transactionDto) => {
