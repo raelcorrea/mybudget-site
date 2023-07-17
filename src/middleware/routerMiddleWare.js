@@ -1,4 +1,7 @@
 const transactionRouter = require('../app/transaction/transactionRouter')
-module.exports = (app) => {
+
+const routerMiddleWare = (app) => {
   app.use('/', transactionRouter)
 }
+
+module.exports = routerMiddleWare
