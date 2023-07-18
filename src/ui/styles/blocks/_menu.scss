@@ -5,9 +5,12 @@
     color: var(--c-white);
     text-decoration: none;
     transition: linear 0.3s;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     display: block;
     border-radius: 0.25rem;
+    span {
+      display: none;
+    }
     &:hover {
       background-color: var(--c-secondary);
     }

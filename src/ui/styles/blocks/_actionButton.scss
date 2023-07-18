@@ -1,6 +1,6 @@
 .actionButton {
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   color: var(--c-green);
   cursor: pointer;
@@ -9,7 +9,25 @@
   align-items: center;
   gap: 0.5rem;
   transition: linear 0.3s;
+  font-size: 1.25rem;
+  span {
+    display: none;
+  }
   &:hover {
     background-color: var(--c-green-light);
+  }
+  @include medium {
+    padding: 0.5rem 1rem;
+    span {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+  @include large {
+    padding: 0.5rem 1rem;
+    span {
+      display: inline;
+    }
   }
 }
