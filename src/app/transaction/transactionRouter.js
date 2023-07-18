@@ -9,8 +9,7 @@ const controller = transactionController(
 )
 
 transactionRouter.get('/delete/:id', controller.deleteAndRedirect)
-transactionRouter.post('/create', controller.addAndRedirect)
-transactionRouter.post('/edit', controller.updateAndRedirect)
+transactionRouter.post('/addAndEditRedirect', controller.addAndEditRedirect)
 transactionRouter.get('/:q', controller.homeView)
 transactionRouter.get('/', controller.homeView)
 transactionRouter.get('/edit/:id', controller.editView)

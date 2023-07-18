@@ -1,0 +1,12 @@
+const $ = require('jquery')
+const addTransactionButton = require('./libs/addTransactionButton')
+const currentDate = require('./libs/currentDate')
+const editTransactionButton = require('./libs/editTransactionButton')
+const inputsMask = require('./libs/inputsMask')
+const typeTransactionSelection = require('./libs/typeTransactionSelection')
+
+currentDate()
+addTransactionButton()
+editTransactionButton()
+typeTransactionSelection()
+inputsMask($)
