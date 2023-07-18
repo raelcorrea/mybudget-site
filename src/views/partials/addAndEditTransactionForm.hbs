@@ -14,7 +14,8 @@
         type='text'
         name='label'
         placeholder='Descrição'
-        value='{{datasource.label}}'
+        value='{{datasource.label}}' 
+        maxlength="50"
         required
       />
     </div>
@@ -27,6 +28,7 @@
         placeholder='Preço'
         value='{{toPositiveNumberFormat datasource.value}}'
         class="currencyMask"
+        maxlength="50"
         required
       />
     </div>

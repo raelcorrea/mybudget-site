@@ -4,7 +4,7 @@ const database = require('../../config/database')
 // Transaction Model
 module.exports = database.define('transaction', {
   label: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(50),
     allowNull: false,
   },
   value: {
@@ -12,7 +12,7 @@ module.exports = database.define('transaction', {
     allowNull: false,
   },
   categories: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(50),
     allowNull: false,
   },
   dueDate: {
@@ -20,7 +20,7 @@ module.exports = database.define('transaction', {
     allowNull: false,
   },
   type: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(10),
     allowNull: false,
   },
 })
