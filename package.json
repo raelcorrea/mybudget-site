@@ -5,8 +5,8 @@
   "scripts": {
     "start": "concurrently \"npm run sass:b\" \"npm run webpack:b\" \"node ./src/config/server.js\"",
     "serve": "concurrently \"npm run sass:w\" \"npm run webpack:w\" \" npm run debug\"",
-    "sass:w": "sass -w src/styles/styles.scss public/css/style.css",
-    "sass:b": "sass src/styles/styles.scss public/css/style.css",
+    "sass:w": "sass -w src/ui/styles/styles.scss public/css/style.css",
+    "sass:b": "sass src/ui/styles/styles.scss public/css/style.css",
     "debug": "SET DEBUG=mybudget-website:* & nodemon ./src/config/server.js",
     "webpack:b": "webpack --mode=production",
     "webpack:w": "webpack --watch --mode=development"
