@@ -1,17 +1,19 @@
 <form
   method='post'
-  action='/edit'
-  id='registerTransactionForm'
+  action='/addAndEditRedirect'
+  id='addAndEditTransactionForm'
   class='form'
 >
   <fieldset>
+    {{#if datasource}}
     <input type="hidden" name="id" value="{{datasource.id}}">
+    {{/if}}
     <div class='field'>
       <label>Descrição</label>
       <input
         type='text'
         name='label'
-        placeholder='Descrição / {{datasource.label}}'
+        placeholder='Descrição'
         value='{{datasource.label}}'
         required
       />

@@ -23,18 +23,6 @@ const transactionTransformerDto = (reqBody) => {
 }
 
 const transactionController = (transactionService) => {
-  const addAndRedirect = async (req, res, next) => {
-    try {
-      const dto = transactionTransformerDto(req.body)
-
-      await transactionService.addTransaction(dto)
-
-      res.redirect('/?source=create&submited=true')
-    } catch (error) {
-      next(error)
-    }
-  }
-
   const deleteAndRedirect = async (req, res, next) => {
     try {
       await transactionService.deleteTransaction(req.params.id)
@@ -44,12 +32,17 @@ const transactionController = (transactionService) => {
     }
   }
 
-  const updateAndRedirect = async (req, res, next) => {
+  const addAndEditRedirect = async (req, res, next) => {
     try {
       const dto = transactionTransformerDto(req.body)
 
-      await transactionService.editTransaction(dto)
-      res.redirect('/?source=edit&submited=true')
+      if (dto.id !== undefined && dto.id !== '') {
+        await transactionService.editTransaction(dto)
+        res.redirect('/?source=edit&submited=true')
+      } else {
+        await transactionService.addTransaction(dto)
+        res.redirect('/?source=create&submited=true')
+      }
     } catch (error) {
       next(error)
     }
@@ -67,7 +60,6 @@ const transactionController = (transactionService) => {
   }
 
   const homeView = async (req, res, next) => {
-    console.log(req.params, req.query.q)
     let _allTransactions = await allTransactions()
     const { q } = req.query
     if (q) {
@@ -99,9 +91,8 @@ const transactionController = (transactionService) => {
   }
 
   return {
-    addAndRedirect,
     deleteAndRedirect,
-    updateAndRedirect,
+    addAndEditRedirect,
     homeView,
     editView,
   }

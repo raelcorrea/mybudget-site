@@ -2,12 +2,13 @@
     {{> balance datasource=balancePartial }}
     {{> pageTitle }}
     {{> transactions datasource=transactions}}
+
     {{#> modal title="Nova Transação" id="modalRegisterTransaction"}}
-      {{> registerTransactionForm}}
+      {{> addAndEditTransactionForm}}
     {{/modal}}
 
-    {{#> modal title="Editar Transação" id="modalEditTransaction" model=model}}
-      {{> editTransactionForm datasource=model}}
+    {{#> modal title="Nova Transação" id="modalEditTransaction"}}
+      {{> addAndEditTransactionForm datasource=model}}
     {{/modal}}
 </section>
 
