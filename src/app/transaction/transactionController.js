@@ -1,3 +1,4 @@
+const toNumberHelper = require('../../helpers/toNumberHelper')
 const balancePartial = require('../../partials/balancePartial')
 const transactionDto = require('./transactionDto')
 
@@ -5,9 +6,11 @@ const transactionTransformerDto = (reqBody) => {
   const { id, label, value, type, categories, dueDate, createdAt, updatedAt } =
     transactionDto(reqBody)
 
-  let transformedValue = value
+  const formatedValue = toNumberHelper(value)
+
+  let transformedValue = Number(formatedValue)
   if (type === 'Despesa') {
-    transformedValue = value * -1
+    transformedValue = transformedValue * -1
   }
 
   return {

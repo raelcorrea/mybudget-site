@@ -16,3 +16,5 @@ const modal = (id) => {
 
   return undefined
 }
+
+module.exports = modal

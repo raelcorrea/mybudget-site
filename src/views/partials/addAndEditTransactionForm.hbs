@@ -21,11 +21,12 @@
     <div class='field'>
       <label>Valor</label>
       <input
-        type='number'
+        type='text'
         step='any'
         name='value'
         placeholder='Preço'
-        value='{{toPositiveNumber datasource.value}}'
+        value='{{toPositiveNumberFormat datasource.value}}'
+        class="currencyMask"
         required
       />
     </div>
@@ -94,7 +95,7 @@
       </div>
     </div>
     <div class='field twoButtons'>
-      <a href="/transaction/delete/{{datasource.id}}" type='button' onclick="return confirm('Deseja excluir esta transação?')">Excluir</a>
+      <a href="/delete/{{datasource.id}}" type='button' onclick="return confirm('Deseja excluir esta transação?')">Excluir</a>
       <button type='submit'>Editar</button>
     </div>
 
