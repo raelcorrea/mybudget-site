@@ -342,9 +342,14 @@ template {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   color: var(--c-secondary);
   background-color: var(--c-primary);
+}
+@media (min-width: 960px) {
+  body {
+    padding: 2rem;
+  }
 }
 
 a {
@@ -352,19 +357,30 @@ a {
 }
 
 .hero {
+  --sp-size: 0.75rem;
   background-color: var(--c-tertiary);
   color: var(--c-white);
   display: flex;
-  padding: 1.5rem;
+  padding: var(--sp-size);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
+  font-size: 1rem;
+}
+.hero h1 {
+  margin: var(--sp-size) 0;
 }
 .hero h1 a {
   color: #fff;
   text-decoration: none;
+}
+@media (min-width: 960px) {
+  .hero {
+    --sp-size: 1.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .menu {
@@ -375,9 +391,12 @@ a {
   color: var(--c-white);
   text-decoration: none;
   transition: linear 0.3s;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   display: block;
   border-radius: 0.25rem;
+}
+.menu a span {
+  display: none;
 }
 .menu a:hover {
   background-color: var(--c-secondary);
@@ -399,6 +418,7 @@ a {
   display: flex;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
 }
 .balance .values {
   width: 100%;
@@ -406,33 +426,36 @@ a {
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
+  flex-direction: column;
 }
 .balance .values li {
   flex: 1;
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .balance .values li h6 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0 0 1rem;
 }
 .balance .values li h6 strong {
   font-weight: 500;
 }
 .balance .values li p {
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0;
   color: var(--c-tertiary);
 }
 .balance .values li i {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   font-size: 2rem;
 }
 .balance .values li.incomes {
@@ -457,6 +480,31 @@ a {
 }
 .balance .values li.total p {
   color: var(--c-white);
+}
+@media (min-width: 769px) {
+  .balance .values {
+    flex-direction: row;
+  }
+}
+@media (min-width: 960px) {
+  .balance .values {
+    gap: 2rem;
+  }
+  .balance .values li {
+    padding: 2rem;
+  }
+  .balance .values li h6 {
+    font-size: 1.5rem;
+  }
+  .balance .values li p {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 960px) {
+  .balance {
+    overflow: none;
+    overflow-x: none;
+  }
 }
 
 .listaTransacoes {
@@ -497,7 +545,6 @@ a {
 }
 
 .view header {
-  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -548,7 +595,8 @@ a {
   gap: 1rem;
 }
 .form .twoButtons button {
-  width: 25%;
+  width: 100%;
+  max-width: 140px;
 }
 .form .twoButtons a {
   display: block;
@@ -603,7 +651,7 @@ a {
 
 .transactions {
   background-color: var(--c-white);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -643,10 +691,11 @@ a {
 .transactions .list .item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: var(--c-primary);
-  padding: 1rem;
+  padding: 0.5rem;
   border-bottom: 1px solid var(--c-primary-dark);
+  flex-direction: column;
 }
 .transactions .list .item p {
   margin: 0;
@@ -655,33 +704,46 @@ a {
   text-decoration: none;
   font-weight: 500;
 }
-.transactions .list .item p.label {
-  width: 35%;
-}
 .transactions .list .item p.price {
-  width: 20%;
-  text-align: right;
   color: var(--c-green);
 }
 .transactions .list .item p.price.negativo {
   color: var(--c-red);
 }
-.transactions .list .item p.categories {
-  width: 20%;
-  text-align: center;
+@media (min-width: 769px) {
+  .transactions .list .item {
+    padding: 1rem;
+    flex-direction: row;
+  }
+  .transactions .list .item p.label {
+    width: 35%;
+  }
+  .transactions .list .item p.price {
+    width: 20%;
+    text-align: right;
+  }
+  .transactions .list .item p.categories {
+    width: 20%;
+    text-align: center;
+  }
+  .transactions .list .item p.type {
+    width: 20%;
+    text-align: center;
+  }
+  .transactions .list .item p.dueDate {
+    width: 10%;
+    text-align: right;
+  }
 }
-.transactions .list .item p.type {
-  width: 20%;
-  text-align: center;
-}
-.transactions .list .item p.dueDate {
-  width: 10%;
-  text-align: right;
+@media (min-width: 960px) {
+  .transactions {
+    padding: 2rem;
+  }
 }
 
 .actionButton {
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   color: var(--c-green);
   cursor: pointer;
@@ -690,9 +752,31 @@ a {
   align-items: center;
   gap: 0.5rem;
   transition: linear 0.3s;
+  font-size: 1.25rem;
+}
+.actionButton span {
+  display: none;
 }
 .actionButton:hover {
   background-color: var(--c-green-light);
+}
+@media (min-width: 769px) {
+  .actionButton {
+    padding: 0.5rem 1rem;
+  }
+  .actionButton span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media (min-width: 960px) {
+  .actionButton {
+    padding: 0.5rem 1rem;
+  }
+  .actionButton span {
+    display: inline;
+  }
 }
 
 .modal {
@@ -712,9 +796,12 @@ a {
 }
 .modal .body {
   background-color: var(--c-primary);
-  width: 640px;
-  padding: 1rem;
+  width: 100%;
+  margin: 1rem;
+  max-width: 640px;
+  padding: 0.5rem;
   border-radius: 0.25rem;
+  box-sizing: border-box;
 }
 .modal .body header {
   display: flex;
@@ -740,6 +827,11 @@ a {
 }
 .modal .body header button:hover {
   background-color: var(--c-red);
+}
+@media (min-width: 960px) {
+  .modal body {
+    padding: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

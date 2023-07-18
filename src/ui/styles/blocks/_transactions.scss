@@ -1,6 +1,6 @@
 .transactions {
   background-color: var(--c-white);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -39,41 +39,55 @@
     .item {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       background-color: var(--c-primary);
-      padding: 1rem;
+      padding: 0.5rem;
       border-bottom: 1px solid var(--c-primary-dark);
+      flex-direction: column;
       p {
         margin: 0;
         a {
           text-decoration: none;
           font-weight: 500;
         }
-        &.label {
-          width: 35%;
-        }
         &.price {
-          width: 20%;
-          text-align: right;
           color: var(--c-green);
           &.negativo {
             color: var(--c-red);
           }
         }
-        &.categories {
-          width: 20%;
-          text-align: center;
-        }
+      }
 
-        &.type {
-          width: 20%;
-          text-align: center;
-        }
-        &.dueDate {
-          width: 10%;
-          text-align: right;
+      @include medium {
+        padding: 1rem;
+        flex-direction: row;
+        p {
+          &.label {
+            width: 35%;
+          }
+          &.price {
+            width: 20%;
+            text-align: right;
+          }
+          &.categories {
+            width: 20%;
+            text-align: center;
+          }
+
+          &.type {
+            width: 20%;
+            text-align: center;
+          }
+          &.dueDate {
+            width: 10%;
+            text-align: right;
+          }
         }
       }
     }
+  }
+
+  @include large {
+    padding: 2rem;
   }
 }
